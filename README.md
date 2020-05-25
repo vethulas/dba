@@ -1,2 +1,2 @@
 # dba
-Database administrator useful scripts
+Some useful scripts for Oracle DBA.
