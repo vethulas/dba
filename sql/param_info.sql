@@ -1,8 +1,8 @@
 --#-----------------------------------------------------------------------------------
 --# File Name    : param_info.sql
 --# Author       : https://gglybin.com
---# Description  : Shows information about database session based on given sid or pid. It can be modified for using other filters (program, username, etc).
---# Call Syntax  : @sess_info (session-sid)
+--# Description  : Shows information about given database parameter.
+--# Call Syntax  : @param_info (parameter-name)
 --#-----------------------------------------------------------------------------------
 
 set lines 400 pages 1000;
