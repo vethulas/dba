@@ -28,6 +28,7 @@ col event        for a40
 col sql_id       for a15
 col prev_sql_id  for a15
 
+
 select
        s.logon_time
        ,s.username
@@ -67,3 +68,19 @@ from   v$session s,
 where  s.paddr=p.addr
 and    sid in (select sid from v$session where final_blocking_session_status='VALID')
 order  by s.logon_time desc;
+
+Prompt ##
+Prompt ## Stats:
+Prompt ##
+
+
+select
+       --s.sid||','||s.serial# as "Blocker SID/SERIAL"
+       final_blocking_session as "Blocker SID"
+       ,count(*) as "Count of Waiting sessions"
+from   v$session s,
+       v$process p
+where  s.paddr=p.addr
+and final_blocking_session_status='VALID'
+group by final_blocking_session
+order by 2 desc;
