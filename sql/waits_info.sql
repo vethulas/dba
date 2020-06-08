@@ -1,7 +1,7 @@
 --#-----------------------------------------------------------------------------------
 --# File Name    : waits_info.sql
 --# Author       : https://gglybin.com
---# Description  : Shows information about current session wait events (exclude idle events).
+--# Description  : Shows information about current sessions wait events (exclude idle events).
 --# Call Syntax  : @waits_info
 --#-----------------------------------------------------------------------------------
 
