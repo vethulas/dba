@@ -28,7 +28,6 @@ col event        for a40
 col sql_id       for a15
 col prev_sql_id  for a15
 
-
 select
        s.logon_time
        ,s.username
@@ -72,7 +71,6 @@ order  by s.logon_time desc;
 Prompt ##
 Prompt ## Stats:
 Prompt ##
-
 
 select
        --s.sid||','||s.serial# as "Blocker SID/SERIAL"
