@@ -111,16 +111,16 @@ Prompt ##
 Prompt ## Password file entry:
 Prompt ##
 
-col username for a20
-col sysdba for a8
-col sysoper for a8
-col sysasm for a8
-col sysbackup for a10
-col sysdg for a8
-col syskm for a8
-col account_status for a20
-col lock_date for a15
-col expiry_date for a15
+col username            for a20
+col sysdba              for a8
+col sysoper             for a8
+col sysasm              for a8
+col sysbackup           for a10
+col sysdg               for a8
+col syskm               for a8
+col account_status      for a20
+col lock_date           for a15
+col expiry_date         for a15
 col authentication_type for a20
 
 select username
