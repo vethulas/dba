@@ -1,7 +1,7 @@
 --#-----------------------------------------------------------------------------------
 --# File Name    : trace_trg.sql
 --#
---# Description  : Creates trigger for tracing new logins of particulart user.
+--# Description  : Creates trigger for tracing new logins of particular user.
 --#
 --# Call Syntax  : @trace_trg (user-name)
 --#-----------------------------------------------------------------------------------
