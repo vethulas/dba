@@ -1,7 +1,7 @@
 --#-----------------------------------------------------------------------------------
 --# File Name    : waits_info.sql
 --#
---# Description  : Shows information about current session wait events (exclude idle events).
+--# Description  : Shows information about current wait events in database (exclude idle events).
 --#
 --# Call Syntax  : @waits_info
 --#-----------------------------------------------------------------------------------
