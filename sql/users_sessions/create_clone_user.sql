@@ -1,8 +1,7 @@
 --#-----------------------------------------------------------------------------------
 --# File Name    : create_clone_user.sql
 --#
---# Description  : Script to create "clone" user, i.e. with same grants to objects in database.
---#                It's not create objects, only a user.
+--# Description  : Script to create "clone" user, i.e. with same grants to objects in database. It not creates objects.
 --#
 --# Call Syntax  : @create_clone_user
 --#-----------------------------------------------------------------------------------
