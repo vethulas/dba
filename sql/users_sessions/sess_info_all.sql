@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : sess_info_all.sql
+--#
+--# Description  : Shows basic information about current sessions in database.
+--#
+--# Call Syntax  : @sess_info_all
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 
@@ -83,3 +91,7 @@ from
      order  by s.logon_time desc
     )
 where rownum <= 50;
+
+Prompt
+Prompt Note: use "sess_info.sql" script to get more detailed information about the particular session.
+Prompt

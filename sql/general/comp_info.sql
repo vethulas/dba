@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : comp_info.sql
+--#
+--# Description  : Shows information about database components.
+--#
+--# Call Syntax  : @comp_info
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 
 Prompt

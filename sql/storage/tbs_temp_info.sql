@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : tbs_temp_info.sql
+--#
+--# Description  : Shows information about TEMP tablespace (usage, size, files count and it's location, etc).
+--#
+--# Call Syntax  : @tbs_temp_info
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 
 Prompt

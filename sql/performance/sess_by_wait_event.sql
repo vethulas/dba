@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : sess_by_wait_event.sql
+--#
+--# Description  : Shows basic information about the sessions using given wait event name.
+--#
+--# Call Syntax  : @sess_by_wait_event (wait-event-name)
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 
@@ -30,3 +38,7 @@ where  s.paddr=p.addr
 and    s.type<>'BACKGROUND'
 and    s.event='&1'
 order  by s.logon_time desc;
+
+Prompt
+Prompt Note: use "sess_info.sql" script to get more detailed information about the particular session.
+Prompt

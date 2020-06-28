@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : sess_info.sql
+--#
+--# Description  : Shows basic information about the database session using given sid or pid.
+--#
+--# Call Syntax  : @sess_info (sid)
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 set linesize 120

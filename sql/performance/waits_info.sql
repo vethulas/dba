@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : waits_info.sql
+--#
+--# Description  : Shows information about current session wait events (exclude idle events).
+--#
+--# Call Syntax  : @waits_info
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 
 select event
@@ -9,3 +17,7 @@ and    e.wait_class<>'Idle'
 and    e.name<>'SQL*Net message to client'
 group  by event
 order  by sess_count desc;
+
+Prompt
+Prompt Note: use "sess_by_wait_event.sql" script to get list of sessions with particular wait event.
+Prompt

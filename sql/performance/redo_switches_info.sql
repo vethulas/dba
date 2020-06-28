@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : redo_switches_info.sql
+--#
+--# Description  : Shows info about redo switches, archive logs size for last 7 days.
+--#
+--# Call Syntax  : @redo_switches_info
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 

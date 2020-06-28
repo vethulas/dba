@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : redo_status_size_info.sql
+--#
+--# Description  : Shows basic information about redo log file (size, path, etc).
+--#
+--# Call Syntax  : @redo_status_size_info
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 
 Prompt

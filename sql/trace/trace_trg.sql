@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : trace_trg.sql
+--#
+--# Description  : Creates trigger for tracing new logins of particulart user.
+--#
+--# Call Syntax  : @trace_trg (user-name)
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 

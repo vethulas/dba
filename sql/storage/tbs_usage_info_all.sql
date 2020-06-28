@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : tbs_usage_info.sql
+--#
+--# Description  : Shows usage information about all data tablespaces.
+--#
+--# Call Syntax  : @tbs_usage_info
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 
 Prompt

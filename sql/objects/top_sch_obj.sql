@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : top_sch_obj.sql
+--#
+--# Description  : Shows top 10 schemas and objects in database ordered by it's size.
+--#
+--# Call Syntax  : @top_sch_obj
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 
@@ -36,3 +44,7 @@ from   (select owner
         where  segment_type in ('TABLE', 'TABLE PARTITION', 'TABLE SUBPARTITION','INDEX', 'INDEX PARTITION', 'INDEX SUBPARTITION', 'TEMPORARY', 'LOBINDEX', 'LOBSEGMENT', 'LOB PARTITION')
         order by bytes desc)
 where rownum <=10;
+
+Prompt
+Prompt Note: use "table_info.sql" script to get more detailed information about the particular table.
+Prompt

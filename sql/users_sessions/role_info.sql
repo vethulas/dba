@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : role_info.sql
+--#
+--# Description  : Shows information about role.
+--#
+--# Call Syntax  : @role_info (role-name)
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 

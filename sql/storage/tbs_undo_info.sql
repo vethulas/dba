@@ -1,3 +1,12 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : tbs_undo_info.sql
+--#
+--# Description  : Shows information about UNDO tablespace (usage, size, files count and it's location, etc).
+--#
+--# Call Syntax  : @tbs_undo_info
+--#-----------------------------------------------------------------------------------
+
+
 set lines 400 pages 1000;
 
 Prompt

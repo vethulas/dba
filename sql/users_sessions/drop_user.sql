@@ -1,3 +1,10 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : drop_user.sql
+--#
+--# Description  : Script to drop database user with cascade option.
+--# 
+--# Call Syntax  : @drop_user
+--#-----------------------------------------------------------------------------------
 
 set define '%'
 set linesize 200

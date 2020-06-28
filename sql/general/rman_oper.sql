@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : rman_oper.sql
+--#
+--# Description  : Shows information about current RMAN sessions and estimated timings.
+--#
+--# Call Syntax  : @rman_oper
+--#-----------------------------------------------------------------------------------
+
 set lines 4000 pages 32
 
 Prompt

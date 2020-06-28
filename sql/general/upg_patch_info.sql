@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : upg_patch_info.sql
+--#
+--# Description  : Shows information about installed cpu/psu/ru patches and upgrades.
+--#
+--# Call Syntax  : @upg_patch_info
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 
 Prompt

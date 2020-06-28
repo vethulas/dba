@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : db_size.sql
+--#
+--# Description  : Short report about the Oracle Database current size.
+--#
+--# Call Syntax  : @db_size
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 set linesize 120

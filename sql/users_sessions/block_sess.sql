@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : block_sess.sql
+--#
+--# Description  : Shows information about blocking/waiting sessions in database.
+--#
+--# Call Syntax  : @block_sess
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 
@@ -78,11 +86,6 @@ and final_blocking_session_status='VALID'
 group by final_blocking_session
 order by 2 desc;
 
-
-
-
-
-
-
-
-
+Prompt
+Prompt Note: use "sess_info.sql" script to get more detailed information about the particular session.
+Prompt

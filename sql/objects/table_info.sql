@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File name    : table_info.sql
+--#
+--# Description  : Shows information about given table - size, fragmentation, it's indexes, constaints etc.
+--# 
+--# Call Syntax  : @table_info (table-owner) (table-name)
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 

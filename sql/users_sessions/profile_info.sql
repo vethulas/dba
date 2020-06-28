@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : profile_info.sql
+--#
+--# Description  : Shows information about profile.
+--#
+--# Call Syntax  : @profile_info (profile-name)
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 

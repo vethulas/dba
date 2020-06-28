@@ -1,9 +1,11 @@
-REM
-REM Description: This script will generate sql file with SQL / PL/SQL commands for creating new user with same permissions as provided user.
-REM
-REM
-REM Syntax: SQL> @create_clone_user
-REM
+--#-----------------------------------------------------------------------------------
+--# File Name    : create_clone_user.sql
+--#
+--# Description  : Script to create "clone" user, i.e. with same grants to objects in database.
+--#                It's not create objects, only a user.
+--#
+--# Call Syntax  : @create_clone_user
+--#-----------------------------------------------------------------------------------
 
 set define '%'
 set lines 1000 pages 1000

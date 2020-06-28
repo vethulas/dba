@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : param_info.sql
+--#
+--# Description  : Shows information about given database parameter.
+--#
+--# Call Syntax  : @param_info (parameter-name)
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 

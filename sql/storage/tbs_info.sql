@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : tbs_info.sql
+--#
+--# Description  : Shows information about tablespace and it's usage.
+--#
+--# Call Syntax  : @tbs_info (tablespace-name)
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 set verify off;
 

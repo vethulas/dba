@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : lock_info.sql
+--#
+--# Description  : Shows information about current locks on objects in database.
+--#
+--# Call Syntax  : @lock_info
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 
 col LOCKED_MODE for a40
@@ -15,3 +23,7 @@ where  l.object_id = o.object_id
 and    l.session_id = s.sid 
 and    s.paddr = p.addr 
 and    s.status != 'KILLED'; 
+
+Prompt
+Prompt Note: use "sess_info.sql" script to get more detailed information about the particular session.
+Prompt
