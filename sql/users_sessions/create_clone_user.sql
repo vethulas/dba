@@ -23,7 +23,7 @@ whenever sqlerror exit sql.sqlcode rollback;
 
 prompt ========================== Input ==========================
 prompt
-accept SourceUser  prompt "Enter source user name: [%_USER]: " default %_USER
+accept SourceUser  prompt "Enter source user name [%_USER]: " default %_USER
 accept NewUser     prompt "Enter new user name [SCOTT]: "      default SCOTT
 accept NewPassword prompt "Enter password for new user [leave blank to copy]: " hide
 
