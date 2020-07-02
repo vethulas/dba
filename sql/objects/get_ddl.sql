@@ -1,9 +1,9 @@
 --#-----------------------------------------------------------------------------------
---# File Name              : get_ddl.sql
+--# File Name     : get_ddl.sql
 --#
---# Description            : Script to get DDL statement for object/user.
+--# Description   : Script to get DDL statement for object/user.
 --#
---# Call Syntax            : @get_ddl
+--# Call Syntax   : @get_ddl
 --#-----------------------------------------------------------------------------------
 
 set define '%'
