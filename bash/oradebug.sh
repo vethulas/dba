@@ -157,7 +157,6 @@ then
       echo ""
       echo "Completed!"
       exit 0
-      exit 0
    else
       echo ""
       echo "ERROR: Looks like something went wrong. Try to run oradebug from sqlplus manually."
