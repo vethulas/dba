@@ -8,8 +8,12 @@
 ##
 ## Call Syntax  : bash$ ./oradebug.sh help
 ##
-## References   : --> How to Collect Diagnostics for Database Hanging Issues (Doc ID 452358.1)
+## References   : --> Troubleshooting Database Hang Issues (Doc ID 1378583.1)
+##                --> How to Collect Diagnostics for Database Hanging Issues (Doc ID 452358.1)
+##                --> How to Collect Systemstate Dumps When you Cannot Connect to Oracle (Doc ID 121779.1)
+##                --> Important Customer information about using Numeric Events (Doc ID 75713.1)
 ##                --> Reading and Understanding Systemstate Dumps (Doc ID 423153.1)
+##                --> EVENT: HANGANALYZE – Reference Note (Doc ID 130874.1)
 ##                --> https://blog.dbi-services.com/oracle-is-hanging-dont-forget-hanganalyze-and-systemstate/
 ##                --> https://tanelpoder.com/2012/05/08/oradebug-hanganalyze-with-a-prelim-connection-and-error-can-not-perform-hang-analysis-dump-without-a-process-state-object-and-a-session-state-object/
 ##                --> https://grepora.com/2017/01/04/systemstate-dump/
