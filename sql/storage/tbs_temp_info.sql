@@ -30,6 +30,35 @@ where  contents='TEMPORARY'
 order  by tablespace_name;
 
 Prompt ##
+Prompt ## File types:
+Prompt ##
+
+col "AUTOEXTENSIBLE?"  for a20
+col "COUNT_OF_FILES"   for 99,999,999
+
+select autoextensible "AUTOEXTENSIBLE?"
+       ,count(*)      "COUNT_OF_FILES"
+from   dba_temp_files
+where  tablespace_name in (select tablespace_name from dba_tablespaces where contents='TEMPORARY')
+group  by autoextensible
+order  by 2 desc;
+
+Prompt ##
+Prompt ## Locations:
+Prompt ##
+
+break on report
+compute sum label 'TOTAL' of COUNT_OF_FILES on report
+
+col "PATH" for a80
+
+select substr(file_name, 1, instr(file_name, '/', -1)) "PATH"
+       ,count(*) "COUNT_OF_FILES"
+from   (select file_name from dba_temp_files where tablespace_name in (select tablespace_name from dba_tablespaces where contents='TEMPORARY'))
+group  by substr(file_name, 1, instr(file_name, '/', -1))
+order  by 2 desc;
+
+Prompt ##
 Prompt ## Usage:
 Prompt ##
 
@@ -38,7 +67,7 @@ select e.max "MAX_POSS_SIZE_MB"
        ,d.mb_total
        ,sum(a.used_blocks * d.block_size) / 1024 / 1024 mb_used
        ,d.mb_total - sum(a.used_blocks * d.block_size) / 1024 / 1024 mb_free
-       ,(100 - round(100 * ((d.mb_total - sum(a.used_blocks * d.block_size) / 1024 / 1024) / d.mb_total))) "USAGE_%" 
+       ,(100 - round(100 * ((d.mb_total - sum(a.used_blocks * d.block_size) / 1024 / 1024) / d.mb_total))) "USAGE_%"
 from   v$sort_segment a,
        (
         select b.name
@@ -60,20 +89,6 @@ where  a.tablespace_name=d.name
 group  by a.tablespace_name, d.mb_total, e.max;
 
 Prompt ##
-Prompt ## File types:
-Prompt ##
-
-col "AUTOEXTENSIBLE?"  for a20
-col "COUNT_OF_FILES"   for 99,999,999
-
-select autoextensible "AUTOEXTENSIBLE?"
-       ,count(*)      "COUNT_OF_FILES"
-from   dba_temp_files
-where  tablespace_name in (select tablespace_name from dba_tablespaces where contents='TEMPORARY')
-group  by autoextensible
-order  by 2 desc;
-
-Prompt ##
 Prompt ## Top 10 Sessions used TEMP:
 Prompt ##
 
@@ -84,7 +99,7 @@ col username     for a20
 col program      for a50
 
 select res.*
-from 
+from
     (select b.tablespace
            ,round(((b.blocks*p.value)/1024/1024),2) temp_size_mb
            ,a.inst_id
