@@ -31,5 +31,5 @@ and    totalwork > 0
 order  by to_timestamp(start_time,'DD-MON-YYYY HH24:MI:SS');
 
 Prompt
-Prompt
+Prompt Note: use "sess_info.sql" script to get more detailed information about the particular session.
 Prompt
