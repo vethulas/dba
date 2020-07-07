@@ -6,7 +6,6 @@
 --# Call Syntax  : @tbs_undo_info
 --#-----------------------------------------------------------------------------------
 
-
 set lines 400 pages 1000;
 
 Prompt
@@ -30,6 +29,35 @@ from   dba_tablespaces
 where  contents='UNDO';
 
 Prompt ##
+Prompt ## File types:
+Prompt ##
+
+col "AUTOEXTENSIBLE?"  for a20
+col "COUNT_OF_FILES"   for 99,999,999
+
+select autoextensible "AUTOEXTENSIBLE?"
+       ,count(*)      "COUNT_OF_FILES"
+from   dba_data_files
+where  tablespace_name in (select tablespace_name from dba_tablespaces where contents='UNDO')
+group  by autoextensible
+order  by 2 desc;
+
+Prompt ##
+Prompt ## Locations:
+Prompt ##
+
+break on report
+compute sum label 'TOTAL' of COUNT_OF_FILES on report
+
+col "PATH" for a80
+
+select substr(file_name, 1, instr(file_name, '/', -1)) "PATH"
+       ,count(*) "COUNT_OF_FILES"
+from   (select file_name from dba_data_files where tablespace_name in (select tablespace_name from dba_tablespaces where contents='UNDO'))
+group  by substr(file_name, 1, instr(file_name, '/', -1))
+order  by 2 desc;
+
+Prompt ##
 Prompt ## Size:
 Prompt ##
 
@@ -37,7 +65,7 @@ col "UNDO_SIZE_MB"        for 99,999,999
 col "UNDO_RETENTION_SEC"  for a20
 col "NEEDED_UNDO_SIZE_MB" for 99,999,999
 
-select 
+select
        m.maxsize "MAX_POSS_SIZE_MB",
        d.undo_size/(1024*1024) "UNDO_SIZE_MB",
        e.value "UNDO_RETENTION_SEC",
@@ -101,21 +129,6 @@ from   (
         ) y
 where   y.tablespace_name = x.tablespace_name
 order   by y.tablespace_name;
-
-Prompt ##
-Prompt ## File types:
-Prompt ##
-
-col "AUTOEXTENSIBLE?"  for a20
-col "COUNT_OF_FILES"   for 99,999,999
-
-select autoextensible "AUTOEXTENSIBLE?"
-       ,count(*)      "COUNT_OF_FILES"
-from   dba_data_files
-where  tablespace_name in (select tablespace_name from dba_tablespaces where contents='UNDO')
-group  by autoextensible
-order  by 2 desc;
-
 
 Prompt ##
 Prompt ## Usage by Extent type:
