@@ -1,9 +1,9 @@
 --#-----------------------------------------------------------------------------------
---# File Name     : get_ddl.sql
+--# File Name              : get_ddl.sql
 --#
---# Description   : Script to get DDL statement for object/user.
+--# Description            : Script to get DDL statement for object/user.
 --#
---# Call Syntax   : @get_ddl
+--# Call Syntax            : SQL> @get_ddl
 --#-----------------------------------------------------------------------------------
 
 set define '%'
@@ -30,6 +30,7 @@ prompt -> PROFILE
 prompt -> ROLE 
 prompt -> CONSTRAINT
 prompt -> SEQUENCE
+prompt -> TABLESPACE
 prompt
 
 --
@@ -38,9 +39,9 @@ prompt
 
 prompt ========================== Input ==========================
 prompt
-prompt Note: if you want to get USER, DIRECTORY, PROFILE or ROLE  DDL - provide below parameters 
+prompt Note: if you want to get USER, DIRECTORY, PROFILE, ROLE or TABLESPACE  DDL - provide below parameters 
 prompt
-prompt ObjectType = OBJECT_TYPE (USER, DIRECTORY, PROFILE or ROLE)
+prompt ObjectType = OBJECT_TYPE (USER, DIRECTORY, PROFILE, ROLE or TABLESPACE)
 prompt ObjectName = USER_NAME / OBJECT_NAME
 prompt Owner      = <empty>
 prompt 
@@ -58,7 +59,7 @@ prompt ========================== DDL =============================
 
 select
 case
-  when '%ObjectType'='USER' or '%ObjectType'='DIRECTORY' or '%ObjectType'='PROFILE' or '%ObjectType'='ROLE'
+  when '%ObjectType'='USER' or '%ObjectType'='DIRECTORY' or '%ObjectType'='PROFILE' or '%ObjectType'='ROLE' or '%ObjectType'='TABLESPACE'
     then (select dbms_metadata.get_ddl('%ObjectType','%ObjectName') DDL from dual)
   else (select dbms_metadata.get_ddl('%ObjectType','%ObjectName','%Owner') DDL from dual)
 end
