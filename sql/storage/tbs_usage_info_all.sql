@@ -3,7 +3,7 @@
 --#
 --# Description  : Shows usage information about all data (i.e. exclude undo/temp) tablespaces.
 --#
---# Call Syntax  : @tbs_usage_info
+--# Call Syntax  : SQL> @tbs_usage_info
 --#-----------------------------------------------------------------------------------
 
 set lines 400 pages 1000;
