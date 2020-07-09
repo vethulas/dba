@@ -1,7 +1,7 @@
 --#-----------------------------------------------------------------------------------
 --# File Name    : tbs_usage_info.sql
 --#
---# Description  : Shows usage information about all data tablespaces.
+--# Description  : Shows usage information about all data (i.e. exclude undo/temp) tablespaces.
 --#
 --# Call Syntax  : @tbs_usage_info
 --#-----------------------------------------------------------------------------------
@@ -10,24 +10,32 @@ set lines 400 pages 1000;
 
 Prompt
 Prompt ##
-Prompt ## Usage:
+Prompt ## Usage (except UNDO / TEMP):
 Prompt ##
 
-column "Tablespace" format a40
-column "Used MB"    format 99,999,999
-column "Free MB"    format 99,999,999
-column "Total MB"   format 99,999,999
+col "TABLESPACE_NAME"    for a40
+col "USED_W_FRAG_MB"     for 99,999,999
+col "FREE_MB"            for 99,999,999
+col "SUM_FILES_MB"       for 99,999,999
+col "MAX_POSS_SIZE_MB"   for 99,999,999
+col "BIGFILE"            for a8
 
-select p1.*
-from  (select fs.tablespace_name                                     "Tablespace"
-              ,(df.totalspace - fs.freespace)                        "Used MB"
-              ,fs.freespace                                          "Free MB"
-              ,df.totalspace                                         "Total MB"
-              ,round(100 * (fs.freespace / df.totalspace))           "Free %"
-              ,(100 - round(100 * (fs.freespace / df.totalspace)))   "Usage %"
+select p1."TABLESPACE_NAME"
+       ,p2.BIGFILE
+       ,p1."USED_W_FRAG_MB"
+       ,p1."FREE_MB"
+       ,p1."CURRENT_SUM_FILES_MB"
+       ,p1."MAX_POSS_SIZE_MB"
+       ,round((100 * p1."USED_W_FRAG_MB" / p1."MAX_POSS_SIZE_MB"),3) "USAGE %"
+from  (select fs.tablespace_name                                     "TABLESPACE_NAME"
+              ,(df.totalspace - fs.freespace)                        "USED_W_FRAG_MB"
+              ,fs.freespace                                          "FREE_MB"
+              ,df.totalspace                                         "CURRENT_SUM_FILES_MB"
+              ,df.max_poss_size                                      "MAX_POSS_SIZE_MB"
        from
               (select tablespace_name
                       ,round(sum(bytes) / 1048576) TotalSpace
+                      ,round(((sum(decode(autoextensible,'YES',maxbytes,bytes))) / 1024 / 1024)) max_poss_size
                from   dba_data_files
                group  by tablespace_name
               ) df,
@@ -39,6 +47,12 @@ from  (select fs.tablespace_name                                     "Tablespace
        where df.tablespace_name = fs.tablespace_name
       ) p1,
       dba_tablespaces p2
-where p2.tablespace_name=p1."Tablespace"
+where p2.tablespace_name=p1."TABLESPACE_NAME"
 and   p2.contents='PERMANENT'
-order by p1."Total MB" desc, p1."Usage %" desc;
+order by p1."CURRENT_SUM_FILES_MB" desc, "USAGE %" desc;
+
+Prompt
+Prompt Note: use "tbs_undo_info.sql" to get usage info about UNDO tablespace.
+Prompt
+Prompt Note: use "tbs_temp_info.sql" to get usage info about TEMP tablespace.
+Prompt
