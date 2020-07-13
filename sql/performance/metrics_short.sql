@@ -15,7 +15,7 @@ select
 'TPS [Transactions Per Second] ..................... '|| tps_value,
 'RPS [Requests Per Second] ......................... '|| rps_value,
 'QPS [Queries Per Second] .......................... '|| qps_value,
-'Average Synchronous Single-Block Read Latency ..... '|| sbrl_value ||' ms',
+'Average Synchronous Single-Block Read Latency ..... '|| round(sbrl_value,4) ||' ms',
 'Wait / DB_Time .................................... '|| wdbt_value ||' %'
 from (
        select round(avg(value),2) tps_value
