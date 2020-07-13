@@ -2,9 +2,10 @@
 ## AWR:
 ##
 
-1359094.1
-1628089.1
-
+Automatic Workload Repository (AWR) Reports - Main Information Sources (Doc ID 1363422.1)
+How to Use AWR Reports to Diagnose Database Performance Issues (Doc ID 1359094.1)
+AWR Report Interpretation Checklist for Diagnosing Database Performance Issues (Doc ID 1628089.1)
+Performance Tuning Using Advisors and Manageability Features: AWR, ASH, ADDM and SQL Tuning Advisor (Doc ID 276103.1)
 
 ##
 ## ADDM:
@@ -19,10 +20,35 @@
 ##
 
 
+FAQ- Statspack Complete Reference (Doc ID 94224.1)
+Installing and Configuring StatsPack Package (Doc ID 149113.1)
+Systemwide Tuning Using STATSPACK Reports (Doc ID 228913.1)
+Gathering a StatsPack Snapshot (Doc ID 149121.1)
+
 ##
-## Wait Events:
+## Waits:
 ##
+
+Troubleshooting 'library cache: mutex X' Waits. (Doc ID 1357946.1)
+Troubleshooting 'cursor: pin S wait on X' waits. (Doc ID 1349387.1)
+Troubleshooting: Understanding and Tuning the Shared Pool (Doc ID 62143.1)
+Resolving Intense and "Random" Buffer Busy Wait Performance Problems (Doc ID 155971.1)
+Understanding and Tuning Buffer Cache and DBWR (Doc ID 62172.1)
+Checkpoint Tuning and Troubleshooting Guide (Doc ID 147468.1)
+Sessions Wait Forever for 'global cache cr request' Wait Event in OPS or RAC (Doc ID 157766.1)
+
 
 ##
 ## Others:
 ##
+
+190124.1
+62143.1
+66484.1
+67522.1
+73167.1
+151473.1
+21154.1
+39817.1
+43214.1
+44961.1
