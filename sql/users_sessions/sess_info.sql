@@ -68,3 +68,5 @@ from  gv$session s,
 where p.addr=s.paddr 
 and   s.sid='&&1'
 --and p.spid='&&1';
+
+set head on;
