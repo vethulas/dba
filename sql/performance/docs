@@ -1,4 +1,13 @@
 ##
+## General:
+##
+
+Where to Find Information About Performance Related Features (Doc ID 1361401.1)
+Best Practices: Proactively Avoiding Database and Query Performance Issues (Doc ID 1482811.1)
+The COE Performance Method (Doc ID 190124.1)
+Which Optimizer is Being Used ? (Doc ID 66484.1)
+
+##
 ## AWR:
 ##
 
@@ -14,6 +23,12 @@ Performance Tuning Using Advisors and Manageability Features: AWR, ASH, ADDM and
 ##
 ## ASH:
 ##
+
+##
+## SQLT:
+##
+
+All About the SQLT Diagnostic Tool (Doc ID 215187.1)
 
 ##
 ## StatsPack:
@@ -49,8 +64,7 @@ AUTOTRACE Option in SQL*Plus (Doc ID 43214.1)
 ## Others:
 ##
 
-The COE Performance Method (Doc ID 190124.1)
-Which Optimizer is Being Used ? (Doc ID 66484.1)
+How to Determine When an Execution Plan was Produced Using DBA_HIST_SQLPLAN (Doc ID 879677.1)
 Diagnosing and Understanding Why a Query is Not Using an Index (Doc ID 67522.1)
 Handling of equally ranked (RBO) or costed (CBO) indexes (Doc ID 73167.1)
 INITRANS Relationship with DB_BLOCK_SIZE. (Doc ID 151473.1)
