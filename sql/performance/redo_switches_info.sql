@@ -34,7 +34,7 @@ Prompt ##
 
 select *
 from 
-     (select to_char(first_time,'YYYY-MON-DD') DAY
+     (select to_char(first_time,'YYYY-MM-DD') DAY
              ,to_char(sum(decode(to_char(first_time,'HH24'),'00',1,0)),'999') "00"
              ,to_char(sum(decode(to_char(first_time,'HH24'),'01',1,0)),'999') "01"
              ,to_char(sum(decode(to_char(first_time,'HH24'),'02',1,0)),'999') "02"
@@ -60,7 +60,7 @@ from
              ,to_char(sum(decode(to_char(first_time,'HH24'),'22',1,0)),'999') "22"
              ,to_char(sum(decode(to_char(first_time,'HH24'),'23',1,0)),'999') "23"
       from   v$log_history
-      group  by to_char(first_time,'YYYY-MON-DD')
+      group  by to_char(first_time,'YYYY-MM-DD')
       order  by day desc)
 where rownum <= 7;
 
@@ -69,11 +69,11 @@ Prompt ## Archive logs size per DAY:
 Prompt ##
 
 select *
-from (select to_char(completion_time,'YYYY-MON-DD') DAY
+from (select to_char(completion_time,'YYYY-MM-DD') DAY
              ,thread# 
              ,round(sum(blocks*block_size)/1024/1024) SIZE_MB
              ,count(*) ARCH_COUNT
       from   v$archived_log 
-      group  by to_char(completion_time,'YYYY-MON-DD'), thread#
+      group  by to_char(completion_time,'YYYY-MM-DD'), thread#
       order  by 1 desc)
 where rownum <= 7;
