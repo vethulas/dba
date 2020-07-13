@@ -37,6 +37,13 @@ Understanding and Tuning Buffer Cache and DBWR (Doc ID 62172.1)
 Checkpoint Tuning and Troubleshooting Guide (Doc ID 147468.1)
 Sessions Wait Forever for 'global cache cr request' Wait Event in OPS or RAC (Doc ID 157766.1)
 
+##
+## Trace:
+##
+
+EVENT: 10046 "enable SQL statement tracing (including binds/waits)" (Doc ID 21154.1)
+Interpreting Raw SQL_TRACE output (Doc ID 39817.1)
+AUTOTRACE Option in SQL*Plus (Doc ID 43214.1)
 
 ##
 ## Others:
@@ -47,7 +54,4 @@ Which Optimizer is Being Used ? (Doc ID 66484.1)
 Diagnosing and Understanding Why a Query is Not Using an Index (Doc ID 67522.1)
 Handling of equally ranked (RBO) or costed (CBO) indexes (Doc ID 73167.1)
 INITRANS Relationship with DB_BLOCK_SIZE. (Doc ID 151473.1)
-EVENT: 10046 "enable SQL statement tracing (including binds/waits)" (Doc ID 21154.1)
-Interpreting Raw SQL_TRACE output (Doc ID 39817.1)
-AUTOTRACE Option in SQL*Plus (Doc ID 43214.1)
 Statistics Gathering: Frequency and Strategy Guidelines (Doc ID 44961.1)
