@@ -23,3 +23,5 @@ select
                                                             (select sum(bytes)/1024/1024 from sys.v_$log) +
                                                             (select sum(BLOCK_SIZE*FILE_SIZE_BLKS)/1024/1024 from v$controlfile),2)
 from dual;
+
+set head on;
