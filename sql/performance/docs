@@ -12,6 +12,7 @@ Which Optimizer is Being Used ? (Doc ID 66484.1)
 ##
 
 Automatic Workload Repository (AWR) Reports - Main Information Sources (Doc ID 1363422.1)
+Performance Diagnosis with Automatic Workload Repository (AWR) (Doc ID 1674086.1)
 How to Use AWR Reports to Diagnose Database Performance Issues (Doc ID 1359094.1)
 AWR Report Interpretation Checklist for Diagnosing Database Performance Issues (Doc ID 1628089.1)
 Performance Tuning Using Advisors and Manageability Features: AWR, ASH, ADDM and SQL Tuning Advisor (Doc ID 276103.1)
@@ -20,15 +21,22 @@ Performance Tuning Using Advisors and Manageability Features: AWR, ASH, ADDM and
 ## ADDM:
 ##
 
+How to Generate and Check an ADDM report (Doc ID 1680075.1)
 How To Delete ADDM Tasks Manually (Doc ID 1570176.1)
+ADDM and AWR Hangs on DBA_SEGMENTS (Doc ID 2192630.1)
 
 ##
 ## ASH:
 ##
 
+How to Generate an ASH Report (Doc ID 1433973.1)
+
 ##
 ## SQL Tuning Advisor:
 ##
+
+Using the DBMS_SQLTUNE Package to Run the SQL Tuning Advisor (Doc ID 262687.1)
+SQL Tuning Advisor (Doc ID 2582636.1)
 
 ##
 ## SQLT:
@@ -74,3 +82,6 @@ Diagnosing and Understanding Why a Query is Not Using an Index (Doc ID 67522.1)
 Handling of equally ranked (RBO) or costed (CBO) indexes (Doc ID 73167.1)
 INITRANS Relationship with DB_BLOCK_SIZE. (Doc ID 151473.1)
 Statistics Gathering: Frequency and Strategy Guidelines (Doc ID 44961.1)
+SRDC - ORA-4031 on Shared Pool: Checklist of Evidence to Supply (Doc ID 1674117.1)
+Information Gathering Script For ORA-4031 Analysis On Shared Pool (Doc ID 1909791.1)
+Master Note for Diagnosing ORA-4031 (Doc ID 1088239.1)
