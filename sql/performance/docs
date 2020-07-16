@@ -45,6 +45,14 @@ SQL Tuning Advisor (Doc ID 2582636.1)
 All About the SQLT Diagnostic Tool (Doc ID 215187.1)
 
 ##
+## SQL Patch:
+##
+
+How to Find the SQL Text and Hints Stored in SQL Patch (Doc ID 2543795.1)
+How To Create SQL Patch From AWR Repository Without Merging Outline Data Hints Manually (Doc ID 2444753.1)
+How to Create a SQL Patch to add Hints to Application SQL Statements (Doc ID 1931944.1)
+
+##
 ## StatsPack:
 ##
 
