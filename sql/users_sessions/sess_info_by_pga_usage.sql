@@ -1,3 +1,11 @@
+--#-----------------------------------------------------------------------------------
+--# File Name    : sess_info_by_pga_usage.sql
+--#
+--# Description  : Shows PGA settings and top 50 sessions ordered by PGA usage.
+--#
+--# Call Syntax  : @sess_info_by_pga_usage
+--#-----------------------------------------------------------------------------------
+
 set lines 400 pages 1000;
 
 Prompt
