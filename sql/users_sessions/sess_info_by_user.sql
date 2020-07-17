@@ -1,9 +1,9 @@
 --#-----------------------------------------------------------------------------------
---# File Name    : sess_info_user.sql
+--# File Name    : sess_info_by_user.sql
 --#
 --# Description  : Shows all user sessions currently connected to database.
 --#
---# Call Syntax  : @sess_info_user (user-name)
+--# Call Syntax  : @sess_info_by_user (user-name)
 --#-----------------------------------------------------------------------------------
 
 set lines 400 pages 1000;
