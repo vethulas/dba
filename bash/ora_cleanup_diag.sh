@@ -48,12 +48,12 @@ USAGE:
 
 2) Background:
 
-   bash$ nohup /home/oracle/ora_cleanup_diag_DEV.sh <DIAG_DEST> <DEPTH> &
+   bash$ nohup /home/oracle/ora_cleanup_diag.sh <DIAG_DEST> <DEPTH> &
 
    Example:
    --------
 
-   bash$ nohup /home/oracle/ora_cleanup_diag_DEV.sh /diag/19.0.0 7 &
+   bash$ nohup /home/oracle/ora_cleanup_diag.sh /diag/19.0.0 7 &
 
 3) Crontab:
 
