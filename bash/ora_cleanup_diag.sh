@@ -69,7 +69,7 @@ check_running() {
 pids=($(ps aux | grep "${exec_name}" | grep -v "grep" | awk {'print$2'}))
 for pid in "${pids}"; do
   if [[ "${pid}" -ne $$ ]]; then
-    message "ERROR: Script already running. Process ID = ${pid}"
+    message "ERROR: Script already running. Process ID = ${pid}" && echo ""
     exit 1
   fi
 done
@@ -202,10 +202,10 @@ exec &> >(tee -a "${exec_log}")
 check_running
 check_param "$@"
 message "INFO:  Counting number of files/directories BEFORE cleanup ..."
-get_count $1
-do_cleanup $1 $2
+get_count "$1"
+do_cleanup "$1" "$2"
 message "INFO:  Counting number of files/directories AFTER cleanup ..."
-get_count $1
+get_count "$1"
 do_script_logs_cleanup
 message "LOG:   ${exec_dir}/${exec_log}"
 message "INFO:  Completed!" && echo ""
