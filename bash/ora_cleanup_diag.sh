@@ -95,13 +95,11 @@ elif [[ "$#" = 1 ]]; then
   fi
 elif [[ "$#" = 2 ]]; then
   if ! [[ -d "$1" ]]; then
-    message "ERROR: Directory provided $1 doesn't exist."
-    echo ""
+    message "ERROR: Directory provided $1 doesn't exist." && echo ""
     exit 1
   else
     if ! [[ "$2" =~ ^[0-9]+$ ]]; then
-      message "ERROR: Looks like second parameter is not a number."
-      echo ""
+      message "ERROR: Looks like second parameter is not a number." && echo ""
       exit 1
     fi
   fi
@@ -138,7 +136,7 @@ local DEPTH="$2"
 message "INFO:  Removing audit files older then ${DEPTH} days ..."
 find "${DIAG_DIR}" -name "*.aud" -type f -mtime +"${DEPTH}" -exec rm -f {} \;
 if ! [[ $? = 0 ]]; then
-  message "ERROR: Something went wrong during audit files removal. Aborting script execution now."
+  message "ERROR: Something went wrong during audit files removal. Aborting script execution now." && echo ""
   exit 1
 else
   message "INFO:  Audit files removal completed."
@@ -147,12 +145,12 @@ fi
 message "INFO:  Removing trace files files older then ${DEPTH} days ..."
 find "${DIAG_DIR}" -name "*.trc" -type f -mtime +"${DEPTH}" -exec rm -f {} \;
 if ! [[ $? = 0 ]]; then
-  message "ERROR: Something went wrong during trace files removal. Aborting script execution now."
+  message "ERROR: Something went wrong during trace files removal. Aborting script execution now." && echo ""
   exit 1
 else
   find "${DIAG_DIR}" -name "*.trm" -type f -mtime +"${DEPTH}" -exec rm -f {} \;
   if ! [[ $? = 0 ]]; then
-    message "ERROR: Something went wrong during trace files removal. Aborting script execution now."
+    message "ERROR: Something went wrong during trace files removal. Aborting script execution now." && echo ""
     exit 1
   fi
   message "INFO:  Trace files removal completed."
@@ -161,7 +159,7 @@ fi
 message "INFO:  Removing core* folders older then ${DEPTH} days ..."
 find "${DIAG_DIR}" -name "core_*" -type d -mtime +"${DEPTH}" -exec rm -rf {} \;
 if ! [[ $? = 0 ]]; then
-  message "ERROR: Something went wrong during core* folders removal. Aborting script execution now."
+  message "ERROR: Something went wrong during core* folders removal. Aborting script execution now." && echo ""
   exit 1
 else
   message "INFO:  Core* folders removal completed."
@@ -170,7 +168,7 @@ fi
 message "INFO:  Removing log_*.xml files older then ${DEPTH} days ..."
 find "${DIAG_DIR}" -name "log_*.xml" -type f -mtime +"${DEPTH}" -exec rm -f {} \;
 if ! [[ $? = 0 ]]; then
-  message "ERROR: Something went wrong during log_*.xml files removal. Aborting script execution now."
+  message "ERROR: Something went wrong during log_*.xml files removal. Aborting script execution now." && echo ""
   exit 1
 else
   message "INFO:  Log xml files removal completed."
