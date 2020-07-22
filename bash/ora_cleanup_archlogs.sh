@@ -200,3 +200,4 @@ do_rman_cmd "$@"
 do_script_logs_cleanup
 message "LOG:   ${exec_dir}/${exec_log}"
 message "INFO:  Completed!" && echo ""
+exit 0
