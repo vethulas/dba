@@ -6,7 +6,7 @@
 #
 #   Description  : Script to remove obsolete audit/trace/core/log files or folders.
 #
-#   Call Syntax  : bash$ ./ora_cleanup_diag.sh --help
+#   Call Syntax  : bash$ ./ora_cleanup_diag.sh -h
 #
 #**************************************************************************************************
 
