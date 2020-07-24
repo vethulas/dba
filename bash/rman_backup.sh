@@ -79,7 +79,7 @@ bash$ /home/oracle/rman_backup.sh /u01/app/oracle/product/19.0.0/dbhome_1 ORCL l
 
 bash$ /home/oracle/rman_backup.sh /u01/app/oracle/product/19.0.0/dbhome_1 ORCL lvl1_cum 8 basic /backup/ORCL
 
-bash$ /home/oracle/rman_backup.sh /u01/app/oracle/product/19.0.0/dbhome_1 ORCL arch 8 basic /backup/ORCL
+bash$ /home/oracle/rman_backup.sh /u01/app/oracle/product/19.0.0/dbhome_1 ORCL arch     8 basic /backup/ORCL
 
 SIZE ESTIMATES:
 ---------------
