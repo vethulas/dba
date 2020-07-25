@@ -18,11 +18,11 @@ Prompt ##
 
 col sample_time for a30
 col wait_class  for a30
-col event       for a70
+col "EVENT"     for a70
 
 select to_char(sample_time, 'HH24:MI:SS DD-MON-YYYY') SAMPLE_TIME
        ,wait_class
-       ,event
+       ,decode(event,'null event','ON CPU',null,'ON CPU',event) "EVENT"
        ,count(*) COUNT
 from   dba_hist_active_sess_history
 where  event is not null
