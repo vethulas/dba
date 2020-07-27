@@ -25,8 +25,7 @@ select to_char(sample_time, 'HH24:MI:SS DD-MON-YYYY') SAMPLE_TIME
        ,decode(event,'null event','ON CPU',null,'ON CPU',event) "EVENT"
        ,count(*) COUNT
 from   dba_hist_active_sess_history
-where  event is not null
-and    wait_class<>'Idle'
+where  wait_class<>'Idle'
 and    sample_time >= to_date ('&&1','HH24:MI:SS DD/MM/YYYY')
 and    sample_time <= to_date ('&&2','HH24:MI:SS DD/MM/YYYY')
 group  by sample_time, wait_class, event
