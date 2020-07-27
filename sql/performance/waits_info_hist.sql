@@ -26,7 +26,6 @@ select to_char(sample_time, 'HH24:MI:SS DD-MON-YYYY') SAMPLE_TIME
        ,count(*) COUNT
 from   dba_hist_active_sess_history
 where  event is not null
-and    event<>'SQL*Net message to client'
 and    wait_class<>'Idle'
 and    sample_time >= to_date ('&&1','HH24:MI:SS DD/MM/YYYY')
 and    sample_time <= to_date ('&&2','HH24:MI:SS DD/MM/YYYY')
@@ -57,8 +56,7 @@ select to_char(sample_time, 'HH24:MI:SS DD-MON-YYYY') SAMPLE_TIME
        ,decode(event,'null event','ON CPU',null,'ON CPU',event) "EVENT"
        ,wait_class
 from   dba_hist_active_sess_history
-where  event<>'SQL*Net message to client'
-and    wait_class<>'Idle'
+where  wait_class<>'Idle'
 and    sample_time >= to_date ('&&1','HH24:MI:SS DD/MM/YYYY')
 and    sample_time <= to_date ('&&2','HH24:MI:SS DD/MM/YYYY')
 group  by sample_time, wait_class, event, session_id, session_serial#, session_type, sql_id, sql_opname, sql_plan_hash_value, sql_full_plan_hash_value
