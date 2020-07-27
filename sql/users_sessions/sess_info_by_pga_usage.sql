@@ -73,3 +73,5 @@ where rownum <= 50;
 Prompt
 Prompt Note: use "sess_info.sql" script to get more detailed information about the particular session.
 Prompt
+Prompt Note: Limiting Process Size with Database Parameter PGA_AGGREGATE_LIMIT (Doc ID 1520324.1)
+Prompt
