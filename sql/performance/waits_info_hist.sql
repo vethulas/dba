@@ -54,7 +54,7 @@ select to_char(sample_time, 'HH24:MI:SS DD-MON-YYYY') SAMPLE_TIME
        ,sql_opname
        ,sql_plan_hash_value "PLAN_HASH"
        ,sql_full_plan_hash_value "FULL_PLAN_HASH"
-       ,decode(event,'null event','ON CPU',null,'ON CPU',event)
+       ,decode(event,'null event','ON CPU',null,'ON CPU',event) "EVENT"
        ,wait_class
 from   dba_hist_active_sess_history
 where  event<>'SQL*Net message to client'
