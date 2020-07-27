@@ -687,3 +687,4 @@ do_rman_backup "$@"
 do_script_logs_cleanup
 message "LOG:   ${exec_dir}/${exec_log}"
 message "INFO:  Completed!"
+exit 0
