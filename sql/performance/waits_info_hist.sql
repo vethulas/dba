@@ -31,6 +31,7 @@ and    sample_time <= to_date ('&&2','HH24:MI:SS DD/MM/YYYY')
 group  by sample_time, wait_class, event
 order  by sample_time;
 
+/*
 Prompt ##
 Prompt ## Details:
 Prompt ##
@@ -60,7 +61,4 @@ and    sample_time >= to_date ('&&1','HH24:MI:SS DD/MM/YYYY')
 and    sample_time <= to_date ('&&2','HH24:MI:SS DD/MM/YYYY')
 group  by sample_time, wait_class, event, session_id, session_serial#, session_type, sql_id, sql_opname, sql_plan_hash_value, sql_full_plan_hash_value
 order  by sample_time;
-
-Prompt
-Prompt Note: use "sess_info_past.sql" script to get some additional details about the session in past simple.
-Prompt
+*/
