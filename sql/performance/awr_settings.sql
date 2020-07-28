@@ -15,7 +15,8 @@ Prompt ##
 
 select extract(day from snap_interval) * 24 * 60 + extract(hour from snap_interval) * 60 + extract(minute from snap_interval) as "Snapshot_Interval [Min]",
        (extract(day from retention) * 24 * 60 + extract(hour from retention) * 60 + extract(minute from retention)) / 60 / 24 as "Retention_Interval [Days]"
-from   dba_hist_wr_control;
+from   dba_hist_wr_control
+where  dbid in (select dbid from v$database);
 
 Prompt ##
 Prompt ## AWR Moving Window:
